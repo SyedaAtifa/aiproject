@@ -1,5 +1,3 @@
-export const runtime = "edge";
-
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
@@ -19,10 +17,5 @@ export async function POST(req: Request) {
   const data = await response.json();
   const content = data.choices[0].message.content;
 
-  return Response.json({ 
-    id: "1",
-    role: "assistant", 
-    content: content,
-    parts: [{ type: "text", text: content }]
-  });
+  return Response.json({ content });
 }
