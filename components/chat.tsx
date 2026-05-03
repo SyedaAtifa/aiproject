@@ -93,7 +93,7 @@ function saveConversations(conversations: Conversation[]) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(conversations));
 }
 
-export function Chat({ modelId = "llama-3.3-70b-versatile" }: { modelId: string }) {
+export function Chat({ _modelId = "llama-3.3-70b-versatile" }: { modelId: string }) {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [currentConvId, setCurrentConvId] = useState<string | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
